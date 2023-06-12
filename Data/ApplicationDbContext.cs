@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using LIT.Models;
 
 namespace LIT.Data
 {
@@ -9,5 +10,6 @@ namespace LIT.Data
             : base(options)
         {
         }
+        public DbSet<LIT.Models.Question>? Question { get; set; }
     }
 }

@@ -6,11 +6,11 @@ namespace LIT.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        public ILogger<HomeController> Logger { get; }
 
         public HomeController(ILogger<HomeController> logger)
         {
-            _logger = logger;
+            Logger = logger;
         }
 
         public IActionResult Index()
@@ -27,6 +27,17 @@ namespace LIT.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is HomeController controller &&
+                   EqualityComparer<ILogger<HomeController>>.Default.Equals(Logger, controller.Logger);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Logger);
         }
     }
 }
