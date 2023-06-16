@@ -14,7 +14,8 @@ namespace LIT.Data.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    AskQuestion = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    SomeQuestion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    SomeAnswer = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
