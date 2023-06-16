@@ -56,7 +56,7 @@ namespace LIT.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,aQuestion")] Question question)
+        public async Task<IActionResult> Create([Bind("Id,SomeQuestion")] Question question)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace LIT.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,aQuestion")] Question question)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,SomeQuestion")] Question question)
         {
             if (id != question.Id)
             {
